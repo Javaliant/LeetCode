@@ -5,8 +5,8 @@ public class Solution {
 
     public static int hammingDistance(int x, int y) {
         int hammingDistance = 0;
-        for (int i = 1; i < 32; i++, x >>= 1, y >>= 1) {
-            hammingDistance += (x & 1) ^ (y & 1);
+        for (int n = x ^ y; n > 0; n >>= 1) {
+            hammingDistance += n & 1;
         }
         return hammingDistance;
     }
